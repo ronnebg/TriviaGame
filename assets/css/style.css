@@ -7,9 +7,13 @@ body {
 .main-area {
   text-align: center;
   align-content: center;
-}
+};
 
 #banner {
     background-color: #efbe76!;
     color: saddlebrown!;
+};
+#scores-section {
+  align-content: center;
+  align-text: center;
 }

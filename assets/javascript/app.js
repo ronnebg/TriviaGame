@@ -15,44 +15,43 @@ var questionArray = [{ //pos: 0,
   },
   { //pos: 1,
     question: "Tea?",
-    possAnswers: "a. coffee",
+    possAnswers: ["a. coffee",
     "b. more coffee",
     "c. espresso",
-    "d. latte with a double shot of espresso",
+    "d. latte with a double shot of espresso"],
     answer: 0
   },
   { //pos: 1,
     question: "Milk?",
-    possAnswers: "a. coffee",
+    possAnswers: ["a. coffee",
     "b. um, no, duh, coffee",
     "c. seriously?",
-    "d. No, I prefer cream in my coffee",
+    "d. No, I prefer cream in my coffee"],
     answer: 3
   }
 ]
 
 
 // Variable to  hold the setInterval when we start the slideshow
-var questionShowing;
+var nextQuestion;
 var timeRemaining = 7
 
 
 //The startup bit
-$("#start").on("click", function (event) {
-    $("#start").hide();
 
-   }
 // Function for displaying questions and answers:
 function makeQuestionSet() {
 
-  $("#questions-view").empty();)
+  $("#questions-view").empty();
 
 $("#buttons-view").empty();
 
-// Loop through the array of question sets
-for (var i = 0; i < questionsArray.length; i++) {
+// TODO:  Loop through the array of question sets
+  nextQuestion+i
+for (questionsArray[i])) {
 
   $("question-view").text(question)
+  nextQuestion++
   for (var i = 0; i < possAnswers.length; i++)
   //create a button
   var a = $("<button>");
@@ -66,7 +65,10 @@ for (var i = 0; i < questionsArray.length; i++) {
   $("#buttons-view").append(a);
 }
 
-
+$("#start").on("click", function(event){
+  $("#start").hide();
+  makeQuestionsSet();
+ })
 //  Variable for interval ID when we execute
 //  the "questionCountdown" function
 var intervalId;
@@ -147,7 +149,8 @@ function changeScore() {
     $("#winsHTML").html(winsCounter)
     $("#scores-section").append("<h2>well done, fellow coffee drinker. You deserve another cup! Care to play again?</h2>");
     $(restartGame())
-  } else if ((playeranswer !== compyanswer) || (ranouttatime)) {
+    }
+   else if ((playeranswer !== compyanswer) || (ranouttatime)) {
     console.log("LOSER!");
     console.log(lossesCounter + 1)
     lossesCounter++
